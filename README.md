@@ -2,27 +2,52 @@
 
 9417 Kaggle project.
 
-##Folder Structure:
+## Folder Structure:
 - 'aptos2019' current train/test data (20gv zipped)
 - 'aptos2015' old comp train/tesr data (80gb zipped)
 - folder for each person (should be no git issues, but can still access other peoples code. Strucutre yours how you feel like)
-- 'resnet50Base' contains the base resnet NN weights
+- 'resnet50' contains the base resnet NN weights
 - submission.py will be what is provided to kaggle as a submission (along with relevant weights files)
 
 ## AWS instance
-- source the tensorflow/python conda environment
-`pip install tqdm kaggle`
+p2.xlarge with >= 250gb, the cheapest being in N. Virginia or Ohio.
 
-## Easy kaggle api
-Instructions at https://github.com/Kaggle/kaggle-api. Just a json key download (to the right folder), and a `pip install kaggle`.
+### Upon new connection:  
+`source activate tensorflow_p36`  
+`pip install tqdm`  
+`pip install --upgrade pip`  
+`source activate tensorflow_p36`  
+`git clone https://github.com/HaydenMuscat24/kaggle_aptos.git`  
+
+## Kaggle api
+Instructions at https://github.com/Kaggle/kaggle-api.  
+`pip install kaggle`  
+`mkdir ~/.kaggle`  
+`vim ~/.kaggle/kaggle.json`  
+Place in the contents from your Kaggle api json 
+`chmod 600 /home/ubuntu/.kaggle/kaggle.json`  
 
 ### aptos2019 data
-Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data/. Run `kaggle competitions download -c aptos2019-blindness-detection`
+Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data/.   
+`mkdir aptos2019`  
+`cd aptos2019`  
+`kaggle competitions download -c aptos2019-blindness-detection`
+`unzip test_images.zip -d test_images`  
+`unzip train_images.zip -d train_images`  
+`rm .zip`
 
 ### aptos2015 data
-Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data. Run `kaggle competitions download -c diabetic-retinopathy-detection`
+Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data.  
+`mkdir aptos2015 && cd aptos2015`  
+`kaggle competitions download -c diabetic-retinopathy-detection`  
+`sudo apt install p7zip-full`  
+
+`mkdir test_images train_images && mv test.zip* test_images && mv train.zip* train_images`  
+`cd test_images && 7za x train.zip.001 && rm *.zip.* && mv train/* . && rmdir train && cd ..`  
+`cd test_images && 7za x test.zip.001  && rm *.zip.* && mv test/*  . && rmdir test  && cd ..`  
+
+`unzip sampleSubmission.csv.zip && unzip trainLabels.csv.zip && unzip sample.zip && rm *.zip`  
 
 
-
-##Todo:
+## Todo:
 - find a good way to automatically pip install required modules on a new system
