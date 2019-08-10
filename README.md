@@ -10,8 +10,14 @@
 - submission.py will be what is provided to kaggle as a submission (along with relevant weights files)
 
 ## AWS instance
-- source the tensorflow/python conda environment
-`pip install tqdm kaggle`
+`source activate tensorflow_p36
+pip install tqdm kaggle
+pip install --upgrade pip
+source activate tensorflow_p36
+
+git clone https://github.com/HaydenMuscat24/kaggle_aptos.git
+
+mkdir ~/.kaggle`
 
 ## Easy kaggle api
 Instructions at https://github.com/Kaggle/kaggle-api. Just a json key download (to the right folder), and a `pip install kaggle`.
