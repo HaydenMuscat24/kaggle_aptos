@@ -38,24 +38,16 @@ Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data/.
 
 ### aptos2015 data
 Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data.  
-`mkdir aptos2015`  
-`cd aptos2015`  
-`unzip sampleSubmission.csv.zip`  
-`unzip trainLabels.csv.zip`  
-`unzip sample.zip`  
-`rm sampleSubmission.csv.zip trainLabels.csv.zip sample.zip`  
-
+`mkdir aptos2015 && cd aptos2015`  
+`kaggle competitions download -c diabetic-retinopathy-detection`  
 `sudo apt install p7zip-full`  
-`mkdir test_images train_images`  
-`mv test.zip* test_images`
-`mv train.zip* train_images`  
-`cd test_images`  
-`7za -x train.zip.001`  
 
-`cd test_images`  
-`kaggle competitions download -c diabetic-retinopathy-detection`
+`mkdir test_images train_images && mv test.zip* test_images && mv train.zip* train_images`  
+`cd test_images && 7za x train.zip.001 && rm *.zip.* && mv train/* . && rmdir train && cd ..`  
+`cd test_images && 7za x test.zip.001  && rm *.zip.* && mv test/*  . && rmdir test  && cd ..`  
+
+`unzip sampleSubmission.csv.zip && unzip trainLabels.csv.zip && unzip sample.zip && rm *.zip`  
 
 
-
-##Todo:
+## Todo:
 - find a good way to automatically pip install required modules on a new system
