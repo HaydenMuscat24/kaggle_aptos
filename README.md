@@ -25,10 +25,15 @@ Instructions at https://github.com/Kaggle/kaggle-api.
 `mkdir ~/.kaggle`  
 `vim ~/.kaggle/kaggle.json`  
 Place in the contents from your Kaggle api json 
+`chmod 600 /home/ubuntu/.kaggle/kaggle.json`  
 
 ### aptos2019 data
 Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data/.   
+`cd aptos2019`  
 `kaggle competitions download -c aptos2019-blindness-detection`
+`unzip test_images.zip -d test_images`  
+`unzip train_images.zip -d train_images`  
+`rm .zip`
 
 ### aptos2015 data
 Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data.  
