@@ -35,8 +35,8 @@ Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data.
 `kaggle competitions download -c diabetic-retinopathy-detection`  
 
 `mkdir test_images train_images && mv test.zip* test_images && mv train.zip* train_images`  
-`cd test_images && 7za x train.zip.001 && rm *.zip.* && mv train/* . && rmdir train && cd ..`  
-`cd test_images && 7za x test.zip.001  && rm *.zip.* && mv test/*  . && rmdir test  && cd ..`  
+`cd train_images && 7za x train.zip.001 && rm *.zip.* && mv train/* . && rmdir train && cd ..`  
+`cd test_images  && 7za x test.zip.001  && rm *.zip.* && mv test/*  . && rmdir test  && cd ..`  
 
 `unzip sampleSubmission.csv.zip && unzip trainLabels.csv.zip && unzip sample.zip && rm *.zip`  
 
