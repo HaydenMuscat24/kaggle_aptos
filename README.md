@@ -12,7 +12,6 @@ p2.xlarge with > 300gb, the cheapest being in N. Virginia or Ohio.
 ### Upon new connection:  
 `pip install --upgrade pip`  
 `pip install kaggle`  
-`sudo apt install p7zip-full`  
 `source activate tensorflow_p36`  
 `git clone https://github.com/HaydenMuscat24/kaggle_aptos.git`  
 
@@ -20,17 +19,18 @@ p2.xlarge with > 300gb, the cheapest being in N. Virginia or Ohio.
 Instructions at https://github.com/Kaggle/kaggle-api.  
 `mkdir ~/.kaggle`  
 `vim ~/.kaggle/kaggle.json`  
-Place in the contents from your Kaggle api json 
-`chmod 600 /home/ubuntu/.kaggle/kaggle.json`  
+Place in the contents from your Kaggle api json  
+`chmod 600 ~/.kaggle/kaggle.json`  
 
 ### aptos2019 data
 Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data/.   
 `mkdir aptos2019 && cd aptos2019`  
-`kaggle competitions download -c aptos2019-blindness-detection`
+`kaggle competitions download -c aptos2019-blindness-detection`  
 `unzip test_images.zip -d test_images && unzip train_images.zip -d train_images && rm *.zip`
 
 ### aptos2015 data
 Accept the rules https://www.kaggle.com/c/diabetic-retinopathy-detection/data.  
+`sudo apt install p7zip-full`  
 `mkdir aptos2015 && cd aptos2015`  
 `kaggle competitions download -c diabetic-retinopathy-detection`  
 
