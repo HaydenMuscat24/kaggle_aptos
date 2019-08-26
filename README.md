@@ -18,7 +18,7 @@ p2.xlarge with > 100gb, the cheapest being in N. Virginia or Ohio.
 NC6 promo instance, with the data science vm (dsvm). 
 `sudo -i`  
 `pip install --upgrade pip`  
-`sudo yum install p7zip-full`  
+`yum install p7zip`  
 `pip install kaggle opencv-python`  
 `git clone https://github.com/HaydenMuscat24/kaggle_aptos.git`  
 The OS disk only has 30GB of space. us `fd -h` and look for the mount of the 100GB disk to place the data in and `ln -s` the disk to be under the git in the original OS. There is also a 350GB disk but that is removed when the instance is stopped.
