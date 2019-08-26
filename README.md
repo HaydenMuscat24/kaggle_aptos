@@ -6,14 +6,20 @@
 - 'aptos2019' current train/test data (20gb zipped)
 - 'aptos2015' old comp train/test data (80gb zipped)
 
-## AWS instance
-p2.xlarge with > 300gb, the cheapest being in N. Virginia or Ohio.
-
-### Upon new connection:  
+### AWS instance
+p2.xlarge with > 100gb, the cheapest being in N. Virginia or Ohio.
 `pip install --upgrade pip`  
 `pip install kaggle`  
 `source activate tensorflow_p36`  
 `git clone https://github.com/HaydenMuscat24/kaggle_aptos.git`  
+
+### Azure instance instance
+NC6 promo instance, with the data science vm (dsvm). 
+`sudo -i`  
+`pip install --upgrade pip`  
+`pip install kaggle opencv-python`  
+`git clone https://github.com/HaydenMuscat24/kaggle_aptos.git`  
+The OS disk only has 30GB of space. us `fd -h` and look for the mount of the 100GB disk to place the data in and `ln -s` the disk to be under the git in the original OS. There is also a 350GB disk but that is removed when the instance is stopped.
 
 ## Kaggle api
 Instructions at https://github.com/Kaggle/kaggle-api.  
